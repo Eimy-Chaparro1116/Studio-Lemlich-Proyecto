@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo | Studio Lemlich</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body class="pagina-shop">
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <small>STUDIO</small>
+        LEMLICH
+      </a>
+      <form class="buscar" role="search" onsubmit="return false">
+        <input type="search" id="buscador-shop" placeholder="Buscar prendas..." aria-label="Buscar prendas">
+      </form>
+      <nav class="menu" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="catalogo.html" class="activo">Catálogo</a>
+        <a href="#ayuda">Ayuda</a>
+      </nav>
+      <a href="carrito.html" class="carrito">Carrito (2)</a>
+    </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="categorias-shop">
+      <div class="contenedor">
+        <div class="grid-categorias" id="filtro-categorias">
+          <button type="button" class="cat-item activo" data-cat="todos">
+            <div class="foto" style="--c:#cbb5a2"><img src="../img/ejecutivo.jpg" alt="Ejecutivo" onerror="this.remove()"></div>
+            <span>EJECUTIVO</span>
+          </button>
+          <button type="button" class="cat-item" data-cat="verano">
+            <div class="foto" style="--c:#e4c4b7"><img src="../img/verano.jpg" alt="Verano" onerror="this.remove()"></div>
+            <span>VERANO</span>
+          </button>
+          <button type="button" class="cat-item" data-cat="libre">
+            <div class="foto" style="--c:#d6a99a"><img src="../img/libre.jpg" alt="Libre" onerror="this.remove()"></div>
+            <span>LIBRE</span>
+          </button>
+          <button type="button" class="cat-item" data-cat="invierno">
+            <div class="foto" style="--c:#b8b2ae"><img src="../img/invierno.jpg" alt="Invierno" onerror="this.remove()"></div>
+            <span>INVIERNO</span>
+          </button>
+          <button type="button" class="cat-item" data-cat="femenino">
+            <div class="foto" style="--c:#e9c2cf"><img src="../img/femenino.jpg" alt="Femenino" onerror="this.remove()"></div>
+            <span>FEMENINO</span>
+          </button>
+          <button type="button" class="cat-item" data-cat="vintages">
+            <div class="foto" style="--c:#3a3640"><img src="../img/vintages.jpg" alt="Vintages" onerror="this.remove()"></div>
+            <span>VINTAGES</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="promos-shop">
+      <div class="contenedor">
+        <div class="bento-promos">
+          <article class="promo-card promo-sale">
+            <div class="foto" style="--c:#b7c2b4">
+              <img src="../img/promo-sale.jpg" alt="Ongoing SALE 50%" onerror="this.remove()">
+              <div class="promo-contenido">
+                <h2>Ongoing SALE. 50%</h2>
+                <a href="#recomendados" class="btn-promo oscuro">Ver más productos</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="promo-card promo-alto">
+            <div class="foto" style="--c:#dfd9d2">
+              <img src="../img/" alt="Mira más productos" onerror="this.remove()">
+              <div class="promo-contenido">
+                <h2>Mira más<br>Productos</h2>
+                <a href="#recomendados" class="btn-promo oscuro">Explora</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="promo-card promo-oferta">
+            <div class="foto" style="--c:#c698b6">
+              <img src="../img/p.jpg" alt="Other offer" onerror="this.remove()">
+              <div class="promo-contenido fila-oferta">
+                <h3>Other offer</h3>
+                <a href="#artesanas" class="btn-promo claro">Read more</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion artesanas" id="artesanas">
+      <div class="contenedor">
+        <h2>Trabajo hecho por mujeres artesanas</h2>
+        <p class="descripcion-artesanas">
+          El trabajo artesanal de estas mujeres va mucho más allá de la creación manual; es un puente vivo que une historias, territorios y herencia cultural. Con una paciencia y sensibilidad inigualables, transforman materias primas en relatos tangibles, donde cada puntada y textura refleja la identidad, la pasión y el orgullo por un oficio transmitido de generación en generación.
+        </p>
+
+        <div class="grid-artesanas">
+          <div class="foto foto-pantalon" style="--c:#f1f1f1"><img src="../img/Pantalon_azul.jpg" alt="Pantalón azul" onerror="this.remove()"></div>
+          <div class="foto" style="--c:#2c3547"><img src="../img/vestido_jean.jpg" alt="Prenda artesanal 2" onerror="this.remove()"></div>
+          <div class="foto" style="--c:#e4c0cc"><img src="../img/vestido_rosa.jpg" alt="Prenda artesanal 3" onerror="this.remove()"></div>
+          <div class="foto" style="--c:#b88e6d"><img src="../img/vestido_corto.jpg" alt="Prenda artesanal 4" onerror="this.remove()"></div>
+          <div class="foto" style="--c:#242426"><img src="../img/chaqueta.jpg" alt="Prenda artesanal 5" onerror="this.remove()"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion recomendados" id="recomendados">
+      <div class="contenedor">
+        <div class="encabezado-subrayado">
+          <h2>Productos que te Pueden Gustar</h2>
+          <p>Productos con mejores Calificaciones que te pueden gustar</p>
+        </div>
+
+        <div class="grid-recomendados" id="lista-recomendados">
+          <article class="producto-shop">
+            <div class="foto" style="--c:#f4efe9"><img src="../img/camisa_formal.jpg" alt="Camisa formal" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">CAMISA FORMAL</p>
+                <span class="precio">$45.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="5 de 5 estrellas">★★★★★</span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="producto-shop">
+            <a href="producto.html" style="display: block;">
+              <div class="foto" style="--c:#252527"><img src="../img/falda.jpg" alt="Falda" onerror="this.remove()"></div>
+            </a>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre"><a href="producto.html">FALDA</a></p>
+                <span class="precio">$56.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="4 de 5 estrellas">★★★★<span>★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="producto-shop">
+            <div class="foto" style="--c:#ece9e6"><img src="../img/falda_blanca.jpg" alt="Falda blanca" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">FALDA BLANCA</p>
+                <span class="precio">$40.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="4 de 5 estrellas">★★★★<span>★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="producto-shop">
+            <div class="foto" style="--c:#4c7ab5"><img src="../img/camisa_azul.jpg" alt="Camisa azul" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">CAMISA AZUL</p>
+                <span class="precio">$36.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie" id="ayuda">
+    <div class="contenedor">
+      <div>
+        <div class="sello-footer">
+          <img src="../img/logo-sello.png" alt="Studio Lemlich" onerror="this.style.display='none'">
+          <p class="logo">
+            <small>STUDIO</small>
+            LEMLICH
+          </p>
+        </div>
+        <small>Bogotá, Colombia</small>
+        <small>© Studio Lemlich. Todos los derechos reservados.</small>
+      </div>
+      <div>
+        <h3>MENÚ</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="#ayuda">Ayuda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>DESCUBRE</h3>
+        <ul>
+          <li><a href="index.html#nosotros">El equipo</a></li>
+          <li><a href="index.html#nosotros">Nuestra historia</a></li>
+          <li><a href="index.html#nosotros">Prensa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>SÍGUENOS</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let cantidad = 0;
+      const carrito = document.getElementById("carrito");
+      document.querySelectorAll(".agregar").forEach((b) => {
+        b.addEventListener("click", () => {
+          cantidad++;
+          carrito.textContent = "Carrito (" + cantidad + ")";
+        });
+      });
+
+      const buscador = document.getElementById("buscador-shop");
+      const tarjetas = document.querySelectorAll("#lista-recomendados .producto-shop");
+      buscador.addEventListener("input", (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        tarjetas.forEach((card) => {
+          const nombre = card.querySelector(".nombre").textContent.toLowerCase();
+          card.style.display = nombre.includes(q) ? "" : "none";
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

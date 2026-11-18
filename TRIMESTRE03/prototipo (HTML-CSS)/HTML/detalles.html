@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Últimos Detalles | Studio Lemlich</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body class="pagina-checkout">
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <small>STUDIO</small>
+        LEMLICH
+      </a>
+      <form class="buscar" role="search" onsubmit="return false">
+        <span class="icono-lupa"></span>
+        <input type="search" placeholder="Buscar prendas" aria-label="Buscar prendas">
+      </form>
+      <nav class="menu" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="#ayuda">Ayuda</a>
+      </nav>
+      <button class="carrito" id="carrito" type="button">Carrito (2)</button>
+    </div>
+  </header>
+
+  <nav class="barra-pasos" aria-label="Progreso de compra">
+    <div class="contenedor">
+      <a href="carrito.html" class="paso">1. Carrito</a>
+      <span class="paso activo" aria-current="step">2. Últimos Detalles</span>
+      <a href="pagos.html" class="paso">3. Opciones de Pago</a>
+      
+    </div>
+  </nav>
+
+  <main class="checkout-contenido">
+    <div class="contenedor">
+      <div class="grid-checkout">
+        
+        <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+        <section class="formulario-detalles">
+          <h1>Últimos Detalles</h1>
+          
+          <form id="form-detalles" novalidate>
+            <div class="fila-doble">
+              <input type="text" id="nombre" placeholder="Nombre completo" required>
+              <input type="text" id="apellidos" placeholder="Apellidos completos" required>
+            </div>
+
+            <div class="fila-unica">
+              <input type="tel" id="telefono" placeholder="Teléfono" required>
+            </div>
+
+            <div class="fila-unica">
+              <input type="text" id="direccion" placeholder="Dirección" required>
+            </div>
+
+            <div class="fila-doble">
+              <select id="ciudad" aria-label="Ciudad" required>
+                <option value="">Ciudad</option>
+                <option value="Bogotá">Bogotá</option>
+                <option value="Medellín">Medellín</option>
+                <option value="Cali">Cali</option>
+                <option value="Barranquilla">Barranquilla</option>
+              </select>
+              <input type="text" id="barrio" placeholder="Barrio" required>
+            </div>
+
+            <div class="fila-doble">
+              <input type="text" id="codigo-pago" placeholder="Código de Pago">
+              <input type="tel" id="telefono-alt" placeholder="Teléfono alternativo">
+            </div>
+
+            <hr class="separador-checkout">
+
+            <!-- OPCIONES DE ENVÍO -->
+            <div class="opciones-envio">
+              <label class="tarjeta-envio activa" id="label-free">
+                <input type="radio" name="envio" value="0" checked>
+                <div class="envio-info">
+                  <strong>Envío Gratis</strong>
+                  <span>Entre 2 - 5 días hábiles</span>
+                </div>
+              </label>
+
+              <label class="tarjeta-envio" id="label-express">
+                <input type="radio" name="envio" value="20000">
+                <div class="envio-info">
+                  <strong>Entrega al Día Siguiente - $20.000</strong>
+                  <span>24 horas después de confirmar</span>
+                </div>
+              </label>
+            </div>
+
+            <hr class="separador-checkout">
+
+            <p class="mensaje-error" id="error-checkout" role="alert"></p>
+
+            <div class="botones-checkout">
+            <a href="pagos.html" class="btn-siguiente">Siguiente</a>
+            <a href="catalogo.html" class="btn-cancelar">Cancelar</a>
+          </div>
+          </form>
+        </section>
+
+        <!-- COLUMNA DERECHA: RESUMEN -->
+        <aside class="resumen-compra">
+          <h2>Resumen</h2>
+
+          <div class="lista-resumen">
+            <article class="item-resumen">
+              <div class="foto" style="--c:#b9c9a8">
+                <img src="../img/vestido_casual.jpg" alt="Vestido Floreado" onerror="this.remove()">
+              </div>
+              <div>
+                <p class="nombre">VESTIDO FLOREADO</p>
+                <p class="precio">$80.000</p>
+              </div>
+            </article>
+
+            <article class="item-resumen">
+              <div class="foto" style="--c:#4c7ab5">
+                <img src="../img/pantalon_azul.jpg" alt="Jean Clásico" onerror="this.remove()">
+              </div>
+              <div>
+                <p class="nombre">JEAN CLÁSICO</p>
+                <p class="precio">$90.000</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="agregar-otro">
+            <a href="catalogo.html">¿QUIERE AGREGAR OTRO PRODUCTO? <span>⌄</span></a>
+          </div>
+
+          <div class="totales-resumen">
+            <div class="linea-total">
+              <span>SUBTOTAL</span>
+              <span id="subtotal-texto">$170.000</span>
+            </div>
+            <div class="linea-total">
+              <span>ENVÍO</span>
+              <span id="envio-texto">GRATIS</span>
+            </div>
+            <div class="linea-total">
+              <span>IMPUESTOS</span>
+              <span id="impuestos-texto">$13.000</span>
+            </div>
+
+            <div class="linea-total final">
+              <span>TOTAL</span>
+              <span id="total-texto">$183.000</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie" id="ayuda">
+    <div class="contenedor">
+      <div>
+        <div class="sello-footer">
+          <img src="../img/logo-sello.png" alt="Studio Lemlich" onerror="this.style.display='none'">
+          <p class="logo">LEMLICH</p>
+        </div>
+        <small>Bogotá, Colombia</small>
+        <small>© Studio Lemlich. Todos los derechos reservados.</small>
+      </div>
+      <div>
+        <h3>MENÚ</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="#ayuda">Ayuda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>DESCUBRE</h3>
+        <ul>
+          <li><a href="index.html#nosotros">El equipo</a></li>
+          <li><a href="index.html#nosotros">Nuestra historia</a></li>
+          <li><a href="index.html#nosotros">Prensa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>SÍGUENOS</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const subtotal = 170000;
+      const impuestos = 13000;
+      const radiosEnvio = document.querySelectorAll('input[name="envio"]');
+      const envioTexto = document.getElementById("envio-texto");
+      const totalTexto = document.getElementById("total-texto");
+      const tarjetas = document.querySelectorAll(".tarjeta-envio");
+
+      function formatearPesos(valor) {
+        return "$" + valor.toLocaleString("es-CO");
+      }
+
+      radiosEnvio.forEach((radio) => {
+        radio.addEventListener("change", () => {
+          tarjetas.forEach((t) => t.classList.remove("activa"));
+          radio.closest(".tarjeta-envio").classList.add("activa");
+
+          const costoEnvio = Number(radio.value);
+          envioTexto.textContent = costoEnvio === 0 ? "GRATIS" : formatearPesos(costoEnvio);
+          totalTexto.textContent = formatearPesos(subtotal + impuestos + costoEnvio);
+        });
+      });
+
+      const form = document.getElementById("form-detalles");
+      const errorMsg = document.getElementById("error-checkout");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const requeridos = form.querySelectorAll("[required]");
+        let incompleto = false;
+
+        requeridos.forEach((campo) => {
+          if (!campo.value.trim()) {
+            campo.style.borderColor = "#c62828";
+            incompleto = true;
+          } else {
+            campo.style.borderColor = "#cccccc";
+          }
+        });
+
+        if (incompleto) {
+          errorMsg.textContent = "Por favor completa los campos obligatorios marcados en rojo.";
+          return;
+        }
+
+        errorMsg.textContent = "";
+        window.location.href = "pagos.html";
+      });
+    });
+  </script>
+
+</body>
+</html>

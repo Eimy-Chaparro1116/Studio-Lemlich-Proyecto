@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falda Negra | Studio Lemlich</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body class="pagina-producto">
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <small>STUDIO</small>
+        LEMLICH
+      </a>
+      <form class="buscar" role="search" onsubmit="return false">
+        <span class="icono-lupa"></span>
+        <input type="search" placeholder="Buscar prendas" aria-label="Buscar prendas">
+      </form>
+      <nav class="menu" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="catalogo.html" class="activo">Catálogo</a>
+        <a href="#ayuda">Ayuda</a>
+      </nav>
+      <a href="carrito.html" class="carrito">Carrito (2)</a>
+    </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="detalle-producto">
+      <div class="contenedor">
+        <div class="grid-detalle">
+          <div class="galeria-producto">
+            <div class="foto-principal" style="--c:#e5e5e5">
+              <img id="img-principal" src="../img/falda.jpg" alt="Falda Negra" onerror="this.style.opacity='0'">
+              <div class="miniaturas">
+                <button type="button" class="mini activa" data-src="../img/falda-negra-1.jpg" style="--c:#252527" aria-label="Vista 1">
+                  <img src="../img/falda-negra-1.jpg" alt="" onerror="this.remove()">
+                </button>
+                <button type="button" class="mini" data-src="../img/falda-negra-2.jpg" style="--c:#888888" aria-label="Vista 2">
+                  <img src="../img/falda-negra-2.jpg" alt="" onerror="this.remove()">
+                </button>
+                <button type="button" class="mini" data-src="../img/falda-negra-3.jpg" style="--c:#b0b0b0" aria-label="Vista 3">
+                  <img src="../img/falda-negra-3.jpg" alt="" onerror="this.remove()">
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-detalle">
+            <h1>Falda Negra</h1>
+            <div class="valoracion-detalle">
+              <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+              <small>4 Reviews</small>
+            </div>
+
+            <div class="precio-modelo">
+              <span class="precio-grande">$ 59.000</span>
+              <select id="select-modelo" aria-label="Seleccionar talla o modelo">
+                <option value="">Select Model</option>
+                <option value="S">Talla S - Negro</option>
+                <option value="M">Talla M - Negro</option>
+                <option value="L">Talla L - Negro</option>
+              </select>
+            </div>
+
+            <p class="descripcion-detalle">
+              Conjunto de 2 piezas informal para niñas preadolescentes que incluye leggings integrados y falda, negro y blanco
+            </p>
+
+            <div class="acciones-compra">
+              <button type="button" class="btn-anadir" id="btn-anadir">Añadir</button>
+              <button type="button" class="btn-favorito" id="btn-favorito" aria-label="Agregar a favoritos">♡</button>
+            </div>
+            <p class="mensaje-detalle" id="mensaje-detalle" role="status"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion similares">
+      <div class="contenedor">
+        <h2 class="titulo-centrado">Productos Similares</h2>
+        <div class="grid-similares">
+          <article class="card-similar">
+            <div class="foto" style="--c:#d8c4b8"><img src="../img/similar-1.jpg" alt="Falda boleros" onerror="this.remove()"></div>
+            <p class="nombre">PRODUCT NAME</p>
+            <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+            <p class="precio">$300</p>
+          </article>
+
+          <article class="card-similar">
+            <div class="foto" style="--c:#c2b8b0"><img src="../img/similar-2.jpg" alt="Falda asimétrica" onerror="this.remove()"></div>
+            <p class="nombre">PRODUCT NAME</p>
+            <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+            <p class="precio">$300</p>
+          </article>
+
+          <article class="card-similar">
+            <div class="foto" style="--c:#b8b2ac"><img src="../img/similar-3.jpg" alt="Falda plisada" onerror="this.remove()"></div>
+            <p class="nombre">PRODUCT NAME</p>
+            <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+            <p class="precio">$300</p>
+          </article>
+
+          <article class="card-similar">
+            <div class="foto" style="--c:#a5b5c4"><img src="../img/similar-4.jpg" alt="Falda abertura" onerror="this.remove()"></div>
+            <p class="nombre">PRODUCT NAME</p>
+            <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+            <p class="precio">$300</p>
+          </article>
+
+          <article class="card-similar">
+            <div class="foto" style="--c:#d4d2d0"><img src="../img/similar-5.jpg" alt="Falda doble abertura" onerror="this.remove()"></div>
+            <p class="nombre">PRODUCT NAME</p>
+            <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+            <p class="precio">$300</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion resenas">
+      <div class="contenedor">
+        <h2 class="titulo-centrado">Reseñas</h2>
+        <div class="lista-resenas">
+          <article class="item-resena">
+            <div class="autor-resena">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <p class="autor-nombre">John Doe</p>
+                <small>August 14, 2024</small>
+                <span class="estrellas" aria-label="2 de 5 estrellas">★★<span>★★★</span></span>
+              </div>
+            </div>
+            <p class="texto-resena">No me gusto la tela con todo se mancha no me gusto no la volveria a comprar</p>
+          </article>
+
+          <article class="item-resena">
+            <div class="autor-resena">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <p class="autor-nombre">John Doe</p>
+                <small>August 14, 2024</small>
+                <span class="estrellas" aria-label="5 de 5 estrellas">★★★★★</span>
+              </div>
+            </div>
+            <p class="texto-resena">Me gusto super comodo , A la hora de lavar super facil,combina con todo ademas que tiene bobillos para llevar todas mis cositas ya compre en los dos colores.<br>cada que voy al gimnacio me la pongo no me provoca sudor super recomendado</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie" id="ayuda">
+    <div class="contenedor">
+      <div>
+        <div class="sello-footer">
+          <img src="../img/logo-sello.png" alt="Studio Lemlich" onerror="this.style.display='none'">
+          <p class="logo">LEMLICH</p>
+        </div>
+        <small>Bogotá, Colombia</small>
+        <small>© Studio Lemlich. Todos los derechos reservados.</small>
+      </div>
+      <div>
+        <h3>MENÚ</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="#ayuda">Ayuda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>DESCUBRE</h3>
+        <ul>
+          <li><a href="index.html#nosotros">El equipo</a></li>
+          <li><a href="index.html#nosotros">Nuestra historia</a></li>
+          <li><a href="index.html#nosotros">Prensa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>SÍGUENOS</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const imgPrincipal = document.getElementById("img-principal");
+      const miniaturas = document.querySelectorAll(".mini");
+      miniaturas.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          miniaturas.forEach((m) => m.classList.remove("activa"));
+          btn.classList.add("activa");
+          imgPrincipal.src = btn.dataset.src;
+          imgPrincipal.style.opacity = "1";
+        });
+      });
+
+      let cantidad = 0;
+      const carrito = document.getElementById("carrito");
+      const selectModelo = document.getElementById("select-modelo");
+      const mensajeDetalle = document.getElementById("mensaje-detalle");
+
+      document.getElementById("btn-anadir").addEventListener("click", () => {
+        if (!selectModelo.value) {
+          mensajeDetalle.style.color = "#c62828";
+          mensajeDetalle.textContent = "Por favor selecciona un modelo o talla primero.";
+          selectModelo.focus();
+          return;
+        }
+        cantidad++;
+        carrito.textContent = " Carrito (" + cantidad + ")";
+        mensajeDetalle.style.color = "#2e7d32";
+        mensajeDetalle.textContent = "Falda Negra (" + selectModelo.value + ") añadida al carrito.";
+      });
+
+      const btnFav = document.getElementById("btn-favorito");
+      btnFav.addEventListener("click", () => {
+        const activo = btnFav.classList.toggle("activo");
+        btnFav.textContent = activo ? "♥" : "♡";
+      });
+    });
+  </script>
+
+</body>
+</html>

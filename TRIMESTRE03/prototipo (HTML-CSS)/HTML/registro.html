@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crea tu cuenta | Studio Lemlich</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body class="pagina-login">
+
+  <div class="foto" role="img" aria-label="Máquina de coser en un taller de confección"></div>
+  <div class="cinta" aria-hidden="true"></div>
+
+  <main class="panel">
+    <form class="formulario" id="form-registro" novalidate>
+      <h1>Crea tu cuenta</h1>
+      <p class="intro">Llena estos datos y ya puedes entrar.</p>
+
+      <div class="campo">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" autocomplete="name" required>
+        <p class="error" id="error-nombre"></p>
+      </div>
+
+      <div class="campo">
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" autocomplete="email" required>
+        <p class="error" id="error-correo"></p>
+      </div>
+
+      <div class="campo con-boton">
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" name="clave" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required>
+        <button type="button" class="ver" id="ver-clave" aria-label="Mostrar contraseña">Mostrar</button>
+        <p class="error" id="error-clave"></p>
+      </div>
+
+      <div class="campo">
+        <label for="clave2">Repite la contraseña</label>
+        <input type="password" id="clave2" name="clave2" placeholder="Igual a la anterior" autocomplete="new-password" required>
+        <p class="error" id="error-clave2"></p>
+      </div>
+
+      <p class="error" id="error-registro" role="alert"></p>
+      <button type="submit" class="boton">Crear cuenta</button>
+
+      <p class="cambio">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+    </form>
+  </main>
+
+  <script src="../auth-local.js"></script>
+  <script>
+    const campos = {
+      nombre: document.getElementById("nombre"),
+      correo: document.getElementById("correo"),
+      clave: document.getElementById("clave"),
+      clave2: document.getElementById("clave2"),
+    };
+    const ver = document.getElementById("ver-clave");
+
+    ver.addEventListener("click", () => {
+      const oculto = campos.clave.type === "password";
+      campos.clave.type = campos.clave2.type = oculto ? "text" : "password";
+      ver.textContent = oculto ? "Ocultar" : "Mostrar";
+      ver.setAttribute("aria-label", oculto ? "Ocultar contraseña" : "Mostrar contraseña");
+    });
+
+    function mostrarError(nombre, mensaje) {
+      const p = document.getElementById("error-" + nombre);
+      p.textContent = mensaje;
+      p.classList.toggle("visible", Boolean(mensaje));
+      campos[nombre].setAttribute("aria-invalid", Boolean(mensaje));
+    }
+
+    function validar() {
+      const nombre = campos.nombre.value.trim();
+      const correo = campos.correo.value.trim();
+      const clave = campos.clave.value;
+      const clave2 = campos.clave2.value;
+      const errores = {
+        nombre: nombre.length < 3 ? "Escribe tu nombre completo." : "",
+        correo: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo) ? "" : "Escribe un correo válido, como nombre@correo.com.",
+        clave: clave.length < 8 ? "Usa al menos 8 caracteres." : "",
+        clave2: clave2 && clave2 === clave ? "" : "Las contraseñas no coinciden.",
+      };
+      let primero = null;
+      for (const k in errores) {
+        mostrarError(k, errores[k]);
+        if (errores[k] && !primero) primero = campos[k];
+      }
+      if (primero) primero.focus();
+      return !primero;
+    }
+
+    document.getElementById("form-registro").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!validar()) return;
+      const errorRegistro = document.getElementById("error-registro");
+      const boton = e.currentTarget.querySelector('button[type="submit"]');
+      errorRegistro.textContent = "";
+      errorRegistro.classList.remove("visible");
+      boton.disabled = true;
+
+      try {
+        await window.authLocal.registrar({
+          nombre: campos.nombre.value,
+          correo: campos.correo.value,
+          clave: campos.clave.value,
+        });
+        window.alert("Cuenta creada. Ahora puedes iniciar sesión.");
+        window.location.href = "login.html";
+      } catch (error) {
+        console.error("No se pudo completar el registro:", error);
+        errorRegistro.textContent = error.message || "No se pudo guardar la cuenta.";
+        errorRegistro.classList.add("visible");
+      } finally {
+        boton.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>

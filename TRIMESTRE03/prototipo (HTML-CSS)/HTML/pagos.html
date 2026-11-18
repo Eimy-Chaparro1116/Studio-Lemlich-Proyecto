@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medios de Pago | Studio Lemlich</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body class="pagina-checkout">
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <small>STUDIO</small>
+        LEMLICH
+      </a>
+      <form class="buscar" role="search">
+        <span class="icono-lupa"></span>
+        <input type="search" placeholder="Buscar prendas" aria-label="Buscar prendas">
+      </form>
+      <nav class="menu" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="#ayuda">Ayuda</a>
+      </nav>
+      <a href="carrito.html" class="carrito">Carrito (2)</a>
+    </div>
+  </header>
+
+  <nav class="barra-pasos" aria-label="Progreso de compra">
+    <div class="contenedor">
+      <a href="carrito.html" class="paso">1. Carrito</a>
+      <a href="detalles.html" class="paso">2. Últimos Detalles</a>
+      <span class="paso activo" aria-current="step">3. Opciones de Pago</span>
+    </div>
+  </nav>
+
+  <main class="checkout-contenido">
+    <div class="contenedor">
+      <div class="grid-checkout">
+
+        <!-- COLUMNA IZQUIERDA: MEDIOS DE PAGO -->
+        <section class="seccion-pagos">
+          <h1>Medios de Pagos</h1>
+
+          <form action="comprobante_pago.html" class="form-pago">
+            <!-- OPCIÓN 1: TARJETA DÉBITO / CRÉDITO -->
+            <div class="caja-metodo">
+              <label class="cabecera-metodo">
+                <input type="radio" name="metodo-pago" value="tarjeta" checked>
+                <div>
+                  <strong>Tarjeta Débito, Crédito</strong>
+                  <span>Aquí pueden pagar con la tarjeta de Nequi</span>
+                </div>
+              </label>
+
+              <div class="campos-tarjeta">
+                <div class="fila-tarjeta-num">
+                  <div class="input-icono">
+                    <input type="text" placeholder="0000  0000  0000  0000" maxlength="19" aria-label="Número de tarjeta" required>
+                    <span class="icono-campo" aria-hidden="true">💳</span>
+                  </div>
+                  <input type="text" placeholder="MM / YY" maxlength="7" aria-label="Fecha de vencimiento" required>
+                  <div class="input-icono">
+                    <input type="text" placeholder="CVV" maxlength="4" aria-label="Código CVV" required>
+                    <span class="icono-campo info" title="3 dígitos al respaldo de tu tarjeta">i</span>
+                  </div>
+                </div>
+
+                <input type="text" placeholder="Nombre del titular de la tarjeta" aria-label="Nombre del titular" required>
+              </div>
+            </div>
+
+            <!-- OPCIÓN 2: PAYPAL -->
+            <label class="caja-metodo opcion-paypal">
+              <div class="cabecera-metodo">
+                <input type="radio" name="metodo-pago" value="paypal">
+                <div>
+                  <strong>PayPal</strong>
+                  <span>Paga de forma rápida y segura con tu cuenta de PayPal vinculada.</span>
+                </div>
+              </div>
+              <div class="logo-paypal" aria-hidden="true">
+                <strong>P</strong> <span>PayPal</span>
+              </div>
+            </label>
+
+            <div class="botones-checkout">
+              <button type="submit" class="btn-siguiente">Pagar</button>
+              <a href="detalles.html" class="btn-cancelar">Cancelar</a>
+            </div>
+          </form>
+        </section>
+
+        <!-- COLUMNA DERECHA: PRODUCTOS SELECCIONADOS -->
+        <aside class="resumen-compra">
+          <h2>Productos Seleccionados</h2>
+
+          <div class="lista-resumen">
+            <article class="item-resumen">
+              <div class="foto" style="--c:#b9c9a8">
+                <img src="../img/vestido_casual.jpg" alt="Vestido">
+              </div>
+              <div>
+                <p class="nombre">VESTIDO</p>
+                <p class="precio">$80.000</p>
+              </div>
+            </article>
+
+            <article class="item-resumen">
+              <div class="foto" style="--c:#4c7ab5">
+                <img src="../img/pantalon_azul.jpg" alt="Pantalón">
+              </div>
+              <div>
+                <p class="nombre">PANTALÓN</p>
+                <p class="precio">$90.000</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="agregar-otro">
+            <a href="catalogo.html">¿DESEAS PONER ALGÚN OTRO PRODUCTO? <span>⌄</span></a>
+          </div>
+
+          <div class="totales-resumen">
+            <div class="linea-total">
+              <span>SUBTOTAL</span>
+              <span>$170.000</span>
+            </div>
+            <div class="linea-total">
+              <span>ENVÍO</span>
+              <span>GRATIS</span>
+            </div>
+            <div class="linea-total">
+              <span>IMPUESTOS</span>
+              <span>$13.000</span>
+            </div>
+
+            <div class="linea-total final">
+              <span>TOTAL</span>
+              <span>$183.000</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie" id="ayuda">
+    <div class="contenedor">
+      <div>
+        <div class="sello-footer">
+          <img src="../img/logo-sello.png" alt="Studio Lemlich">
+          <p class="logo">LEMLICH</p>
+        </div>
+        <small>Bogotá, Colombia</small>
+        <small>© Studio Lemlich. Todos los derechos reservados.</small>
+      </div>
+      <div>
+        <h3>MENÚ</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="#ayuda">Ayuda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>DESCUBRE</h3>
+        <ul>
+          <li><a href="index.html#nosotros">El equipo</a></li>
+          <li><a href="index.html#nosotros">Nuestra historia</a></li>
+          <li><a href="index.html#nosotros">Prensa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>SÍGUENOS</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

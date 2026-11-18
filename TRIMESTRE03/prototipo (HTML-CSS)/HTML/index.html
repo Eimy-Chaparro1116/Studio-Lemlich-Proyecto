@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lemlich | Moda con propósito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a href="#inicio" class="logo">
+        <small>STUDIO</small>
+        LEMLICH
+      </a>
+      <form class="buscar" role="search" onsubmit="return false">
+        <span class="icono-lupa"></span>
+        <input type="search" id="buscador" placeholder="Buscar prendas" aria-label="Buscar prendas">
+      </form>
+      <nav class="menu" aria-label="Principal">
+        <a href="#inicio" class="activo">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="#ayuda">Ayuda</a>
+      </nav>
+      <a href="carrito.html" class="carrito">Carrito (2)</a>
+    </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="contenedor">
+        <div class="foto" style="--c:#d9a8bd">
+          <img src="../img/hero.jpg" alt="Colección Lemlich" onerror="this.remove()">
+          <div class="hero-texto">
+            <h1>Moda con propósito y<br>Empoderamiento</h1>
+            <a href="#tienda" class="boton">Productos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="catalogo">
+      <div class="contenedor">
+        <h2 class="titulo-centrado">Catálogo</h2>
+        <div class="carrusel">
+          <button class="flecha izq" type="button" aria-label="Anterior" data-dir="-1">‹</button>
+          <div class="pista" id="pista">
+            <article>
+              <div class="foto foto-vestido-casual" style="--c:#ead8c7"><img src="../img/vestido_casual.jpg" alt="Vestido casual" onerror="this.remove()"></div>
+              <p class="nombre">VESTIDO CASUAL</p>
+              <p class="precio">$85.000</p>
+            </article>
+            <article>
+              <div class="foto" style="--c:#8a6f5c"><img src="../img/patalon_formal.jpg" alt="Pantalón formal" onerror="this.remove()"></div>
+              <p class="nombre">PANTALÓN FORMAL</p>
+              <p class="precio">$50.000</p>
+            </article>
+            <article>
+              <div class="foto" style="--c:#e6c3d0"><img src="../img/blusa-clasica.jpg" alt="Blusa clásica" onerror="this.remove()"></div>
+              <p class="nombre">BLUSA CLÁSICA</p>
+              <p class="precio">$60.000</p>
+            </article>
+            <article>
+              <div class="foto" style="--c:#c9d3e6"><img src="../img/falda-midi.jpg" alt="Falda midi" onerror="this.remove()"></div>
+              <p class="nombre">FALDA MIDI</p>
+              <p class="precio">$55.000</p>
+            </article>
+          </div>
+          <button class="flecha der" type="button" aria-label="Siguiente" data-dir="1">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion nosotros" id="nosotros">
+      <div class="contenedor">
+        <div>
+          <h2>¿Qué dice de Nosotros?</h2>
+          <p>En Studio Lemlich creamos prendas con propósito y calidad. Garantizamos calidad en costura sastre y apoyamos activamente el empoderamiento de las mujeres que las usan.</p>
+        </div>
+        <form class="suscribir" id="suscribir" novalidate>
+          <div class="fila">
+            <input type="email" id="correo" placeholder="Introduce tu correo electrónico" autocomplete="email" required>
+            <button type="submit">SUSCRIBIRSE</button>
+          </div>
+          <p class="mensaje" id="mensaje" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="seccion" id="tienda">
+      <div class="contenedor">
+        <div class="productos" id="lista-productos">
+          <article class="producto grande">
+            <div class="foto" style="--c:#e9c2cf"><img src="../img/tacones_rosas.jpg" alt="Tacones rosados" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">TACONES ROSADOS</p>
+                <span class="precio">$100.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="producto">
+            <div class="foto" style="--c:#6f93c4"><img src="../img/camisa_azul.jpg" alt="Camisa azul" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">CAMISA AZUL</p>
+                <span class="precio">$95.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="producto">
+            <div class="foto" style="--c:#d8c3a8"><img src="../img/patalon_casual.jpg" alt="Pantalón café" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">PANTALÓN CAFÉ</p>
+                <span class="precio">$80.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="producto">
+            <div class="foto" style="--c:#efc9d6"><img src="../img/conjunto_rosa.jpg" alt="Conjunto estampado" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">CONJUNTO ROSADO</p>
+                <span class="precio">$100.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="producto">
+            <div class="foto" style="--c:#b9c9a8"><img src="../img/vestido_floreado.jpg" alt="Vestido floreado" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">VESTIDO FLOREADO</p>
+                <span class="precio">$80.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="producto">
+            <div class="foto" style="--c:#3a3640"><img src="../img/body.jpg" alt="Body negro" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">BODY</p>
+                <span class="precio">$45.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="producto">
+            <div class="foto" style="--c:#f0ece8"><img src="../img/vestido_blanco.jpg" alt="Vestido blanco" onerror="this.remove()"></div>
+            <div class="meta-producto">
+              <div>
+                <p class="nombre">VESTIDO BLANCO</p>
+                <span class="precio">$90.000</span>
+              </div>
+              <div class="acciones-producto">
+                <span class="estrellas" aria-label="3 de 5 estrellas">★★★<span>★★</span></span>
+                <button class="agregar" type="button">Agregar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion banner">
+      <div class="contenedor">
+        <div class="foto" style="--c:#ecd0dc">
+          <img src="../img/banner.jpg" alt="" onerror="this.remove()">
+          <p>Siéntete<br>Empoderada</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie" id="ayuda">
+    <div class="contenedor">
+      <div>
+        <div class="sello-footer">
+          <img src="../img/logo-sello.png" alt="Studio Lemlich" onerror="this.style.display='none'">
+          <p class="logo">LEMLICH</p>
+        </div>
+        <small>Bogotá, Colombia</small>
+        <small>© Studio Lemlich. Todos los derechos reservados.</small>
+      </div>
+      <div>
+        <h3>MENÚ</h3>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="#ayuda">Ayuda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>DESCUBRE</h3>
+        <ul>
+          <li><a href="#nosotros">El equipo</a></li>
+          <li><a href="#nosotros">Nuestra historia</a></li>
+          <li><a href="#nosotros">Prensa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>SÍGUENOS</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const pista = document.getElementById("pista");
+      document.querySelectorAll(".flecha").forEach((b) => {
+        b.addEventListener("click", () => {
+          const item = pista.querySelector("article");
+          if (!item) return;
+          const paso = item.offsetWidth + 32;
+          pista.scrollBy({ left: paso * Number(b.dataset.dir), behavior: "smooth" });
+        });
+      });
+
+      let cantidad = 0;
+      const carrito = document.getElementById("carrito");
+      document.querySelectorAll(".agregar").forEach((b) => {
+        b.addEventListener("click", () => {
+          cantidad++;
+          carrito.textContent = "Carrito (" + cantidad + ")";
+        });
+      });
+
+      const buscador = document.getElementById("buscador");
+      const productos = document.querySelectorAll("#lista-productos .producto");
+      buscador.addEventListener("input", (e) => {
+        const texto = e.target.value.toLowerCase().trim();
+        productos.forEach((p) => {
+          const nombre = p.querySelector(".nombre").textContent.toLowerCase();
+          p.style.display = nombre.includes(texto) ? "" : "none";
+        });
+      });
+
+      document.getElementById("suscribir").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const correo = document.getElementById("correo");
+        const mensaje = document.getElementById("mensaje");
+        const valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value.trim());
+        mensaje.className = "mensaje " + (valido ? "ok" : "error");
+        mensaje.textContent = valido ? "¡Gracias! Te escribiremos pronto." : "Escribe un correo válido, como nombre@correo.com.";
+        if (valido) correo.value = "";
+      });
+    });
+  </script>
+
+</body>
+</html>

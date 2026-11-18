@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicia sesión | Studio Lemlich</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body class="pagina-login">
+
+  <div class="foto" role="img" aria-label="Máquina de coser en un taller de confección"></div>
+  <div class="cinta" aria-hidden="true"></div>
+
+  <main class="panel">
+    <form class="formulario" id="form-login" novalidate>
+      <h1>Inicia sesión</h1>
+      <p class="intro">Entra con tu usuario y tu contraseña.</p>
+
+      <div class="campo">
+        <label for="usuario">Correo</label>
+        <input type="email" id="usuario" name="usuario" list="usuarios-registrados" placeholder="nombre@correo.com" autocomplete="username" required>
+        <datalist id="usuarios-registrados"></datalist>
+      </div>
+
+      <div class="campo con-boton">
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" name="clave" placeholder="Tu contraseña" autocomplete="current-password" required>
+        <button type="button" class="ver" id="ver-clave" aria-label="Mostrar contraseña">Mostrar</button>
+      </div>
+
+      <p class="error" id="error" role="alert">Escribe tu usuario y tu contraseña para continuar.</p>
+
+      <button type="submit" class="boton">Entrar</button>
+
+      <p class="cambio">¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+    </form>
+  </main>
+
+  <script src="../auth-local.js"></script>
+  <script>
+    const usuario = document.getElementById("usuario");
+    const clave = document.getElementById("clave");
+    const error = document.getElementById("error");
+    const ver = document.getElementById("ver-clave");
+
+    function cargarCorreosRegistrados() {
+      const lista = document.getElementById("usuarios-registrados");
+
+      try {
+        const usuarios = window.authLocal.obtenerUsuarios();
+        lista.replaceChildren();
+        usuarios.forEach((usuario) => {
+          const opcion = document.createElement("option");
+          opcion.value = usuario.email;
+          opcion.label = usuario.nombre;
+          lista.append(opcion);
+        });
+      } catch (fallo) {
+        console.error("No se pudieron cargar los correos registrados:", fallo);
+      }
+    }
+
+    cargarCorreosRegistrados();
+
+    ver.addEventListener("click", () => {
+      const oculto = clave.type === "password";
+      clave.type = oculto ? "text" : "password";
+      ver.textContent = oculto ? "Ocultar" : "Mostrar";
+      ver.setAttribute("aria-label", oculto ? "Ocultar contraseña" : "Mostrar contraseña");
+    });
+
+    document.getElementById("form-login").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const faltaUsuario = !usuario.value.trim();
+      const faltaClave = !clave.value;
+      error.classList.toggle("visible", faltaUsuario || faltaClave);
+      error.textContent = "Escribe tu correo y tu contraseña para continuar.";
+      usuario.setAttribute("aria-invalid", faltaUsuario);
+      clave.setAttribute("aria-invalid", faltaClave);
+      if (faltaUsuario) return usuario.focus();
+      if (faltaClave) return clave.focus();
+
+      const boton = e.currentTarget.querySelector('button[type="submit"]');
+      boton.disabled = true;
+      try {
+        const valido = await window.authLocal.iniciarSesion(usuario.value, clave.value);
+        if (!valido) {
+          error.textContent = "El correo o la contraseña no son correctos.";
+          error.classList.add("visible");
+          usuario.setAttribute("aria-invalid", "true");
+          clave.setAttribute("aria-invalid", "true");
+          return;
+        }
+        window.location.href = "index.html";
+      } catch (fallo) {
+        console.error("No se pudo iniciar sesión:", fallo);
+        error.textContent = fallo.message || "No se pudo verificar la cuenta.";
+        error.classList.add("visible");
+      } finally {
+        boton.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>

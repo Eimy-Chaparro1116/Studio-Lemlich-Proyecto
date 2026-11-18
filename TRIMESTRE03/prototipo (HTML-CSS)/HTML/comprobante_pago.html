@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación de pedido | Studio Lemlich</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body class="pagina-checkout">
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <small>STUDIO</small>
+        LEMLICH
+      </a>
+      <form class="buscar" role="search">
+        <span class="icono-lupa"></span>
+        <input type="search" placeholder="Buscar prendas" aria-label="Buscar prendas">
+      </form>
+      <nav class="menu" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="#ayuda">Ayuda</a>
+      </nav>
+      <a href="carrito.html" class="carrito">Carrito (0)</a>
+    </div>
+  </header>
+
+  <main class="confirmacion-wrap">
+    <div class="contenedor">
+      <section class="recibo-pedido" aria-labelledby="titulo-exito">
+        <div class="recibo-cabecera">
+          <div class="marca-check" aria-hidden="true">✓</div>
+          <h1 id="titulo-exito">Pago exitoso</h1>
+          <p>Tu pago se ha completado correctamente. Te enviamos una copia de este comprobante a tu correo.</p>
+        </div>
+
+        <div class="recibo-cuerpo">
+          <h2>Detalles del pago</h2>
+
+          <dl class="tabla-recibo">
+            <div class="fila-recibo">
+              <dt>ID de pedido</dt>
+              <dd>#SL-2026-0482</dd>
+            </div>
+            <div class="fila-recibo">
+              <dt>Fecha de pedido</dt>
+              <dd>17 de noviembre de 2026</dd>
+            </div>
+            <div class="fila-recibo">
+              <dt>Total de artículos</dt>
+              <dd>2 prendas</dd>
+            </div>
+            <div class="fila-recibo separada">
+              <dt>Subtotal</dt>
+              <dd>$170.000</dd>
+            </div>
+            <div class="fila-recibo">
+              <dt>Envío</dt>
+              <dd>Gratis</dd>
+            </div>
+            <div class="fila-recibo">
+              <dt>Impuestos</dt>
+              <dd>$13.000</dd>
+            </div>
+            <div class="fila-recibo total">
+              <dt>Total del pedido</dt>
+              <dd>$183.000</dd>
+            </div>
+          </dl>
+
+          <div class="recibo-acciones">
+            <a href="index.html" class="btn-volver-inicio">Volver a inicio</a>
+            <a href="catalogo.html" class="enlace-seguir">Seguir viendo el catálogo</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie" id="ayuda">
+    <div class="contenedor">
+      <div>
+        <div class="sello-footer">
+          <img src="../img/logo-sello.png" alt="Studio Lemlich">
+          <p class="logo">LEMLICH</p>
+        </div>
+        <small>Bogotá, Colombia</small>
+        <small>© Studio Lemlich. Todos los derechos reservados.</small>
+      </div>
+      <div>
+        <h3>MENÚ</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="#ayuda">Ayuda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>DESCUBRE</h3>
+        <ul>
+          <li><a href="index.html#nosotros">El equipo</a></li>
+          <li><a href="index.html#nosotros">Nuestra historia</a></li>
+          <li><a href="index.html#nosotros">Prensa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>SÍGUENOS</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
